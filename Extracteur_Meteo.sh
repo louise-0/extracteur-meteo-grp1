@@ -15,3 +15,8 @@ then
 fi
 echo "$Date	$Meteo" >> "$Fichier"
 echo "meteo enregistree dans $Fichier"
+#partie 2
+
+git add Extracteur_Meteo.sh
+git commit -m " ajout de la partie 2 pour récupération météo"
+git push origin version1
