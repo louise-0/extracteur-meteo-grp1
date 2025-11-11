@@ -1,34 +1,41 @@
 #!/bin/bash
+
+# Verifie si une ville est choisie
 if [ "$1" = "" ];
 then
     echo "usage:$0 <ville>"
     exit 1
 fi
-Ville=$1
-Date=$(date  +"%Y-%m-%d %H:%M:%S")
-Fichier="meteo_${Ville}.txt"
-Meteo=$(curl -s "https://wttr.in/${Ville}?format=3")
-if [ "$Meteo" = "" ];
+ville=$1
+
+# Selectionne la date et heure actuelle
+date=$(date  +"%Y-%m-%d %H:%M:%S")
+
+# Cree un fichier pour les donnees meteorologiques de la ville choisie
+donnees_meteoVille="meteo_ville.txt"
+curl -s "https://wttr.in/${ville}?format=j1" >"$donnees_meteoVille"
+
+if [ "$donnees_meteoVille" = "" ];
 then
-    echo "erreur!impossible de recuperer la meteo"
+    echo "Erreur! Impossible de recuperer la meteo"
     exit 2
 fi
-echo "$Date	$Meteo" >> "$Fichier"
-echo "meteo enregistree dans $Fichier"
-#partie 2
 
-git add Extracteur_Meteo.sh
-git commit -m " ajout de la partie 2 pour récupération météo"
-git push origin version1
+# Récupère les températures dans le fichier des donnees meteos
+tempActuelle=$(grep -m1 '"temp_C"' "$donnees_meteoVille" | sed 's/[^0-9\-]//g')
+tempDemain=$(grep -m1 '"avgtempC"' "$donnees_meteoVille" | sed 's/[^0-9\-]//g')
 
-TempActuelle=$(curl -s "https://wttr.in/${Ville}?format=%t")
-TempDemain=$(curl -s "https://wttr.in/${Ville}?1" | grep -oE '[+-]?[0-9]+°C' | sed -n '2p')
-if [ -z "$TempDemain" ]; then
-    TempDemain="N/A"
+if [ -z "$tempActuelle" ]; then
+    tempActuelle="N/A"
+    exit 3
 fi
-Jour=$(date +"%Y-%m-%d")
-Heure=$(date +"%H:%M")
-Ligne="${Jour} - ${Heure} - ${Ville} : ${TempActuelle} - ${TempDemain}"
-echo "$Ligne" >> meteo.txt
-echo "Données formatées enregistrées dans meteo.txt"
 
+if [ -z "$tempDemain" ]; then
+    tempDemain="N/A"
+    exit 4
+fi
+
+jour=$(date +"%Y-%m-%d")
+heure=$(date +"%H:%M")
+echo "${jour} - ${heure} - ${ville} : ${tempActuelle}°C - ${tempDemain}°C" >> meteo.txt
+echo "Les données météorologiques de ${ville} ont été formatées et enregistrées dans meteo.txt."
