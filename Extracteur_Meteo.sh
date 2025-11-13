@@ -1,12 +1,13 @@
 #!/bin/bash
 
-# Verifie si une ville est choisie
-if [ "$1" = "" ];
-then
-    echo "usage:$0 <ville>"
-    exit 1
+# Verifie si un argument est fourni, sinon Toulouse comme valeur par défaut 
+if [ "$1" = "" ]; then
+    ville="Toulouse"
+    echo "Aucune ville spécifiée. Utilisation de la ville par défaut : ${ville}"
+else
+    ville=$1
 fi
-ville=$1
+
 
 # Selectionne la date et heure actuelle
 date=$(date  +"%Y-%m-%d %H:%M:%S")
