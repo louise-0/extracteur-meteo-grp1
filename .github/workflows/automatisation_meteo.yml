@@ -1,0 +1,39 @@
+name: Automatisation Périodique de la Météo
+
+on:
+  schedule:
+    - cron: '0 */12 * * *'
+  workflow_dispatch:
+
+jobs:
+  run-meteo:
+    runs-on: ubuntu-latest
+
+    permissions:
+          contents: write
+
+    steps:
+      - name: Récupération du code
+        uses: actions/checkout@v3
+        with:
+          ref: version2
+          persist-credentials: true
+
+      - name: Donner les droits exécution
+        run: chmod +x Extracteur_Meteo.sh
+
+      - name: Exécuter le script Extracteur_Meteo.sh
+        run: ./Extracteur_Meteo.sh
+
+      - name: Commit et push des résultats
+        run: |
+              git config user.name "github-actions[bot]"
+              git config user.email "github-actions[bot]@users.noreply.github.com"
+              git add .
+              git commit -m "Mise à jour automatique de la météo" || echo "Aucune modification à committer"
+              git push
+
+      - name: Vérification du contenu de meteo.txt
+        run: |
+          ls -l
+          cat meteo.txt || echo "meteo.txt introuvable"
