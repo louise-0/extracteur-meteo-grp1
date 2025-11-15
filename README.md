@@ -11,6 +11,7 @@ Configuration du cron :
 Tentative avec WSL (non retenue) :
 Une configuration via WSL a été testée, mais abandonnée pour plusieurs raisons :
 
--Chaque utilisateur devait maintenir sa propre arborescence locale, ce qui compliquait le travail en groupe.
--L’authentification GitHub posait régulièrement problème.
--Les actions de commit et de push vers GitHub ne fonctionnaient pas correctement.
+  - Chaque utilisateur devait maintenir sa propre arborescence locale, ce qui compliquait le travail en groupe.
+  - L’authentification GitHub posait régulièrement problème.
+  - Les actions de commit et de push vers GitHub ne fonctionnaient pas correctement.
+
