@@ -8,3 +8,4 @@
 2025-11-14 - 08:51 - Toulouse : 18°C - 18°C
 2025-11-15 - 03:29 - Toulouse : 13°C - 15°C
 2025-11-16 - 03:40 - Toulouse : 13°C - 14°C
+2025-11-19 - 22:03 - Toulouse : 8°C - 6°C ; Humidite : 93% ; Vent : 19km/h ; Visibilite : 10

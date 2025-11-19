@@ -26,6 +26,10 @@ fi
 tempActuelle=$(grep -m1 '"temp_C"' "$donnees_meteoVille" | sed 's/[^0-9\-]//g')
 tempDemain=$(grep -m1 '"avgtempC"' "$donnees_meteoVille" | sed 's/[^0-9\-]//g')
 
+humidite=$(grep -m1 '"humidity"' "$donnees_meteoVille" | sed 's/[^0-9]//g')
+vent=$(grep -m1 '"windspeedKmph"' "$donnees_meteoVille" | sed 's/[^0-9]//g')
+visibilite=$(grep -m1 '"visibility"' "$donnees_meteoVille" | sed 's/[^0-9]//g')
+
 if [ -z "$tempActuelle" ]; then
     tempActuelle="N/A"
     exit 3
@@ -38,5 +42,5 @@ fi
 
 jour=$(date +"%Y-%m-%d")
 heure=$(date +"%H:%M")
-echo "${jour} - ${heure} - ${ville} : ${tempActuelle}°C - ${tempDemain}°C" >> meteo.txt
+echo "${jour} - ${heure} - ${ville} : ${tempActuelle}°C - ${tempDemain}°C ; Humidite : ${humidite}% ; Vent : ${vent}km/h ; Visibilite : ${visibilite}km" >> meteo.txt
 echo "Les données météorologiques de ${ville} ont été formatées et enregistrées dans meteo.txt."
