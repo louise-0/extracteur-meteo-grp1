@@ -1,42 +1,44 @@
 #!/bin/bash
 
-# Verifie si un argument est fourni, sinon Toulouse comme valeur par défaut 
-if [ "$1" = "" ]; then
-    ville="Toulouse"
-    echo "Aucune ville spécifiée. Utilisation de la ville par défaut : ${ville}"
-else
-    ville=$1
-fi
+ville_par_defaut="Toulouse"
+ville=""
+option=""
 
-
-# Selectionne la date et heure actuelle
-date=$(date  +"%Y-%m-%d %H:%M:%S")
-
-# Cree un fichier pour les donnees meteorologiques de la ville choisie
-donnees_meteoVille="meteo_ville.txt"
-curl -s "https://wttr.in/${ville}?format=j1" >"$donnees_meteoVille"
-
-if [ "$donnees_meteoVille" = "" ];
+if [ "$1" == "--archive" ]; 
 then
-    echo "Erreur! Impossible de recuperer la meteo"
-    exit 2
+    option="--archive"
+    ville="$2"
+else
+    ville="$1"
+    option="$2"
 fi
 
-# Récupère les températures dans le fichier des donnees meteos
-tempActuelle=$(grep -m1 '"temp_C"' "$donnees_meteoVille" | sed 's/[^0-9\-]//g')
-tempDemain=$(grep -m1 '"avgtempC"' "$donnees_meteoVille" | sed 's/[^0-9\-]//g')
-
-if [ -z "$tempActuelle" ]; then
-    tempActuelle="N/A"
-    exit 3
+if [ -z "$ville" ]; 
+then
+    ville=$ville_par_defaut
 fi
 
-if [ -z "$tempDemain" ]; then
-    tempDemain="N/A"
-    exit 4
+temp_fichier_txt="meteo_temp.txt"
+fichier_sortie="meteo.txt"
+
+if [ "$option" == "--archive" ]; 
+then
+    date_actuelle=$(date +"%Y%m%d")
+    fichier_sortie="meteo_${date_actuelle}.txt"
 fi
 
-jour=$(date +"%Y-%m-%d")
-heure=$(date +"%H:%M")
-echo "${jour} - ${heure} - ${ville} : ${tempActuelle}°C - ${tempDemain}°C" >> meteo.txt
-echo "Les données météorologiques de ${ville} ont été formatées et enregistrées dans meteo.txt."
+curl -s "wttr.in/${ville}?format=3" -o "$temp_fichier_txt"
+
+temp_actuelle=$(cut -d':' -f2 "$temp_fichier_txt" | xargs)
+
+date_du_jour=$(date +"%Y-%m-%d")
+heure_actuelle=$(date +"%H:%M")
+
+ligne="${date_du_jour} - ${heure_actuelle} - ${ville} : ${temp_actuelle} "
+
+echo "$ligne" >> "$fichier_sortie"
+
+rm "$temp_fichier_txt"
+
+echo "$ligne"
+
