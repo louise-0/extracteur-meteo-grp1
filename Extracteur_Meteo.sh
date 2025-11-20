@@ -1,44 +1,57 @@
 #!/bin/bash
 
-ville_par_defaut="Toulouse"
-ville=""
-option=""
+#Toulouse par defaut si aucun argument
+Ville="Toulouse"
 
-if [ "$1" == "--archive" ]; 
+#option Json de sauvegarde
+Json=false
+if [ "$1" == "--json" ]; 
 then
-    option="--archive"
-    ville="$2"
+    Json=true
+elif [ -n "$1" ]; 
+then
+    Ville="$1"
+    if [ "$2" == "--json" ]; 
+then
+        Json=true
+    fi
+fi
+
+Date=$(date +"%Y-%m-%d")
+Heure=$(date +"%H:%M")
+
+#recuperation des donnes meterologique
+curl -s "https://wttr.in/${VILLE}?format=j1" > meteo_temp.txt
+
+Temperature_actuelle=$(grep -m1 '"temp_C"' meteo_temp.txt | sed 's/[^0-9\-]//g')
+Temperature_lendemain=$(grep -m1 '"avgtempC"' meteo_temp.txt | sed 's/[^0-9\-]//g')
+
+#valeurs par defaut si non trouvees
+[ -z "$Temperature_actuelle" ] && Temperature_actuelle="Meteo actuelle non disponible"
+[ -z "$Temperature_lendemain" ] && Temperature_lendemain="Meteo de lendemain non disponible"
+
+echo "$Date - $Heure - $Ville : $Temperature_actuelle°C - $Temperature_lendemain°C"
+
+#sauvegarde sous forme Json
+if $Json; 
+then
+    #ecriture Json simple
+    cat <<EOF > meteo.json
+{
+  "date": "$DATE",
+  "heure": "$HEURE",
+  "ville": "$VILLE",
+  "temperature": "${TEMP_ACTUELLE}°C",
+  "prevision": "${TEMP_DEMAIN}°C"
+}
+EOF
+    echo "Meteo enregistree dans meteo.json"
 else
-    ville="$1"
-    option="$2"
+    #ecriture texte simple
+    echo "$Date - $Heure - $Ville: $Temperature_actuelle°C - $Temperature_lendemain°C" >> meteo.txt
+    echo "meteo enregistree dans meteo.txt"
 fi
 
-if [ -z "$ville" ]; 
-then
-    ville=$ville_par_defaut
-fi
-
-temp_fichier_txt="meteo_temp.txt"
-fichier_sortie="meteo.txt"
-
-if [ "$option" == "--archive" ]; 
-then
-    date_actuelle=$(date +"%Y%m%d")
-    fichier_sortie="meteo_${date_actuelle}.txt"
-fi
-
-curl -s "wttr.in/${ville}?format=3" -o "$temp_fichier_txt"
-
-temp_actuelle=$(cut -d':' -f2 "$temp_fichier_txt" | xargs)
-
-date_du_jour=$(date +"%Y-%m-%d")
-heure_actuelle=$(date +"%H:%M")
-
-ligne="${date_du_jour} - ${heure_actuelle} - ${ville} : ${temp_actuelle} "
-
-echo "$ligne" >> "$fichier_sortie"
-
-rm "$temp_fichier_txt"
-
-echo "$ligne"
+#nettoyage du fichier temporaire
+rm meteo_temp.txt
 
