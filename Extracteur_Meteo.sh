@@ -3,16 +3,16 @@
 #Toulouse par defaut si aucun argument
 Ville="Toulouse"
 
-#option Json de sauvegarde
+#option de sauvegarde json 
 Json=false
-if [ "$1" == "--json" ]; 
+if [ "$1" == "--json" ]; #le premier argument est --json on active la sauvegarde en json
 then
     Json=true
-elif [ -n "$1" ]; 
+elif [ -n "$1" ]; #si un premier argument existe il est pris comme ville
 then
-    Ville="$1"
+    Ville="$1" #un deuxieme argument est present
     if [ "$2" == "--json" ]; 
-then
+then  #l'option de sauvegarde en json sactive
         Json=true
     fi
 fi
@@ -20,38 +20,49 @@ fi
 Date=$(date +"%Y-%m-%d")
 Heure=$(date +"%H:%M")
 
-#recuperation des donnes meterologique
-curl -s "https://wttr.in/${VILLE}?format=j1" > meteo_temp.txt
+#recuperation des donnes meterologique et les stocker dans fichier temp
+curl -s "https://wttr.in/${Ville}?format=j1" > meteo_temp.txt
 
-Temperature_actuelle=$(grep -m1 '"temp_C"' meteo_temp.txt | sed 's/[^0-9\-]//g')
-Temperature_lendemain=$(grep -m1 '"avgtempC"' meteo_temp.txt | sed 's/[^0-9\-]//g')
+#grep -m recupere la 1ere occurence
+#sed s/[^0-9\-]//g supprime tout sauf les chiffres et signe -
+#extraction des donnees actuelles
+Temperature=$(grep '"temp_C"' meteo_temp.txt | head -1 | sed 's/[^0-9\-]//g')
+Vent=$(grep '"windspeedKmph"' meteo_temp.txt | head -1 | sed 's/[^0-9]//g')
+Humidite=$(grep '"humidity"' meteo_temp.txt | head -1 | sed 's/[^0-9]//g')
+Visibilite=$(grep '"visibility"' meteo_temp.txt | head -1 | sed 's/[^0-9]//g')
+Prevision=$(grep -oP '"weatherDesc"\s*:\s*\[{"value":"\K[^"]+' meteo_temp.txt | head -1)
 
-#valeurs par defaut si non trouvees
-[ -z "$Temperature_actuelle" ] && Temperature_actuelle="Meteo actuelle non disponible"
-[ -z "$Temperature_lendemain" ] && Temperature_lendemain="Meteo de lendemain non disponible"
+# Valeur par défaut si vide
+[ -z "$Prevision" ] && Prevision="ND"
 
-echo "$Date - $Heure - $Ville : $Temperature_actuelle°C - $Temperature_lendemain°C"
+# Valeurs par defaut si donnees manquantes
+[ -z "$Temperature" ] && Temperature="ND"
+[ -z "$Vent" ] && Vent="ND"
+[ -z "$Humidite" ] && Humidite="ND"
+[ -z "$Visibilite" ] && Visibilite="ND"
+[ -z "$Prevision" ] && Prevision="ND"SS
 
-#sauvegarde sous forme Json
+#sauvegarde
 if $Json; 
 then
-    #ecriture Json simple
     cat <<EOF > meteo.json
 {
-  "date": "$DATE",
-  "heure": "$HEURE",
-  "ville": "$VILLE",
-  "temperature": "${TEMP_ACTUELLE}°C",
-  "prevision": "${TEMP_DEMAIN}°C"
+  "date": "$Date",
+  "heure": "$Heure",
+  "ville": "$Ville",
+  "temperature": "${Temperature}°C",
+  "prevision": "$Prevision",
+  "vent": "${Vent} km/h",
+  "humidite": "${Humidite}%",
+  "visibilite": "${Visibilite} km"
 }
 EOF
+
     echo "Meteo enregistree dans meteo.json"
 else
-    #ecriture texte simple
-    echo "$Date - $Heure - $Ville: $Temperature_actuelle°C - $Temperature_lendemain°C" >> meteo.txt
-    echo "meteo enregistree dans meteo.txt"
+    echo "$Date - $Heure - $Ville : $Temperature°C, $Prevision, Vent: ${Vent} km/h, Humidité: ${Humidite}%, Visibilité: ${Visibilite} km" >> meteo.txt
+    echo "Météo enregistrée dans meteo.txt"
 fi
 
-#nettoyage du fichier temporaire
+#nettoyage fichier temporaire
 rm meteo_temp.txt
-

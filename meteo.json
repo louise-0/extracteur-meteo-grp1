@@ -1,7 +1,10 @@
 {
-  "date": "",
-  "heure": "",
-  "ville": "",
-  "temperature": "°C",
-  "prevision": "°C"
+  "date": "2025-11-20",
+  "heure": "22:00",
+  "ville": "paris",
+  "temperature": "ND°C",
+  "prevision": "ND",
+  "vent": "ND km/h",
+  "humidite": "ND%",
+  "visibilite": "ND km"
 }

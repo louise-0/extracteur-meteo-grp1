@@ -80,3 +80,19 @@
 2025-11-20 - 13:06 - paris: 7°C - 5°C
 2025-11-20 - 19:45 - Rennes: 5°C - 5°C
 2025-11-20 - 19:45 - Rennes: 5°C - 5°C
+2025-11-20 - 21:03 - Toulouse: 5°C - 4°C
+2025-11-20 - 21:03 - paris: 5°C - 4°C
+2025-11-20 - 21:08 - paris: 5°C - 4°C
+2025-11-20 - 21:10 - paris: 5°C - 3°C
+2025-11-20 - 21:10 - Toulouse: 5°C - 3°C
+2025-11-20 - 21:19 - lyon : 5°C, weatherDesc, Vent: 10 km/h, Humidité: 81%, Visibilité: 10 km
+2025-11-20 - 21:22 - Toulouse : 5°C, weatherDesc, Vent: 10 km/h, Humidité: 81%, Visibilité: 10 km
+2025-11-20 - 21:23 - Toulouse : 5°C, weatherDesc, Vent: 10 km/h, Humidité: 81%, Visibilité: 10 km
+2025-11-20 - 21:23 - paris : 5°C, weatherDesc, Vent: 10 km/h, Humidité: 81%, Visibilité: 10 km
+2025-11-20 - 21:28 - lyon : 1°C, weatherDesc, Vent: 8 km/h, Humidité: 86%, Visibilité: 10 km
+2025-11-20 - 21:28 - Toulouse : 5°C, weatherDesc, Vent: 13 km/h, Humidité: 75%, Visibilité: 10 km
+2025-11-20 - 21:44 - Toulouse : 5°C, ND, Vent: 10 km/h, Humidité: 81%, Visibilité: 10 km
+2025-11-20 - 21:48 - lyon : 1°C, ND, Vent: 8 km/h, Humidité: 86%, Visibilité: 10 km
+2025-11-20 - 21:49 - lyon : 1°C, ND, Vent: 8 km/h, Humidité: 86%, Visibilité: 10 km
+2025-11-20 - 21:59 - Toulouse : 5°C, ND, Vent: 10 km/h, Humidité: 81%, Visibilité: 10 km
+2025-11-20 - 22:01 - marseille : 6°C, ND, Vent: 40 km/h, Humidité: 52%, Visibilité: 10 km
