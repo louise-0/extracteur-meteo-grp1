@@ -9,3 +9,7 @@
 2025-11-15 - 03:29 - Toulouse : 13°C - 15°C
 2025-11-16 - 03:40 - Toulouse : 13°C - 14°C
 2025-11-19 - 22:03 - Toulouse : 8°C - 6°C ; Humidite : 93% ; Vent : 19km/h ; Visibilite : 10
+2025-11-19 - 23:35 - Toulouse : 🌑°C - 87%°C ; Humidite : ↘21km/h% ; Vent : N/Akm/h ; Visibilite : N/Akm
+2025-11-20 - 09:43 - Toulouse : 3°C - 5°C ; Vitesse du vent : 10 ; Taux d'humidité : 87 ; Visibilité : 10
+2025-11-20 - 09:44 - Paris : 2°C - 4°C - Vitesse du vent : 10 - Taux d'humidité : 93 - Visibilité : 10
+2025-11-20 - 09:45 - Paris : 2°C - 4°C - Vitesse du vent : 10 - Taux d'humidité : 93 - Visibilité : 10
