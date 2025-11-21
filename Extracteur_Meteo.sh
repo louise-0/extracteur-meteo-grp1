@@ -68,4 +68,3 @@ else
 fi
 
 # Nettoyage fichier temporaire
-rm "$FichierTemp"
