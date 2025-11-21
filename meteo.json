@@ -1,5 +1,6 @@
 {
   "date": "2025-11-21",
+<<<<<<< HEAD
   "heure": "11:56",
   "ville": "Paris",
   "temperature": "2°C",
@@ -7,4 +8,13 @@
   "vent": "14 km/h",
   "humidite": "100%",
   "visibilite": "9 km"
+=======
+  "heure": "13:05",
+  "ville": "Lomé",
+  "temperature": "2°C",
+  "prevision": "ND",
+  "vent": "4 km/h",
+  "humidite": "100%",
+  "visibilite": "10 km"
+>>>>>>> origin/variante3
 }

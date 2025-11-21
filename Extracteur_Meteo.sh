@@ -1,51 +1,71 @@
 #!/bin/bash
 
-#Toulouse par defaut si aucun argument
-Ville="Toulouse"
 
-#option de sauvegarde json 
+# Variante3 : Gestion des erreurs et logs
+
+
+# Ville par défaut
+Ville="Toulouse"
 Json=false
-if [ "$1" == "--json" ]; #le premier argument est --json on active la sauvegarde en json
-then
+
+# Gestion des arguments
+if [ "$1" == "--json" ]; then
     Json=true
-elif [ -n "$1" ]; #si un premier argument existe il est pris comme ville
-then
-    Ville="$1" #un deuxieme argument est present
-    if [ "$2" == "--json" ]; 
-then  #l'option de sauvegarde en json sactive
+elif [ -n "$1" ]; then
+    Ville="$1"
+    if [ "$2" == "--json" ]; then
         Json=true
     fi
 fi
 
+# Date et heure
 Date=$(date +"%Y-%m-%d")
 Heure=$(date +"%H:%M")
+FichierHistorique="meteo.txt"
+FichierTemp="meteo_temp.txt"
+FichierLog="meteo_error.log"
+FichierJson="meteo_${Date}_$(echo $Ville | tr ' ' '_').json"
 
-#recuperation des donnes meterologique et les stocker dans fichier temp
-curl -s "https://wttr.in/${Ville}?format=j1" > meteo_temp.txt
 
-#grep -m recupere la 1ere occurence
-#sed s/[^0-9\-]//g supprime tout sauf les chiffres et signe -
-#extraction des donnees actuelles
-Temperature=$(grep '"temp_C"' meteo_temp.txt | head -1 | sed 's/[^0-9\-]//g')
-Vent=$(grep '"windspeedKmph"' meteo_temp.txt | head -1 | sed 's/[^0-9]//g')
-Humidite=$(grep '"humidity"' meteo_temp.txt | head -1 | sed 's/[^0-9]//g')
-Visibilite=$(grep '"visibility"' meteo_temp.txt | head -1 | sed 's/[^0-9]//g')
-Prevision=$(grep -oP '"weatherDesc"\s*:\s*\[{"value":"\K[^"]+' meteo_temp.txt | head -1)
+# Récupération des données
 
-# Valeur par défaut si vide
-[ -z "$Prevision" ] && Prevision="ND"
+curl -s "https://wttr.invalid/${Ville}?format=j1" > "$FichierTemp"
 
-# Valeurs par defaut si donnees manquantes
-[ -z "$Temperature" ] && Temperature="ND"
-[ -z "$Vent" ] && Vent="ND"
-[ -z "$Humidite" ] && Humidite="ND"
-[ -z "$Visibilite" ] && Visibilite="ND"
-[ -z "$Prevision" ] && Prevision="ND"SS
 
-#sauvegarde
-if $Json; 
-then
-    cat <<EOF > meteo.json
+curl -s "https://wttr.in/${Ville}?format=j1" > "$FichierTemp"
+
+# Vérifier si le JSON contient des données météo valides
+if ! grep -q '"temp_C"[[:space:]]*:[[:space:]]*"[0-9\+\-]"' "$FichierTemp"; then
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - ERREUR : Données météo non valides pour $Ville" >> "$FichierLog"
+    echo "Erreur détectée ! Voir $FichierLog"
+    rm -f "$FichierTemp"
+    exit 1
+fi
+
+
+# Gestion d'erreur si curl échoue ou fichier vide
+if [ $? -ne 0 ] || [ ! -s "$FichierTemp" ]; then
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - ERREUR : Impossible de récupérer les données pour $Ville" >> "$FichierLog"
+    echo "Erreur détectée ! Voir $FichierLog"
+    exit 1
+fi
+
+# Vérifier si le JSON contient "temp_C" et "weatherDesc" (ville valide)
+if ! grep -q '"temp_C"' "$FichierTemp"; then
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - ERREUR : Données météo non valides pour $Ville" >> "$FichierLog"
+    echo "Erreur détectée ! Voir $FichierLog"
+    rm -f "$FichierTemp"
+    exit 1
+fi
+
+
+# Extraction des données
+
+Temperature=$(grep '"temp_C"' "$FichierTemp" | head -1 | sed 's/[^0-9\-]//g')
+# Sauvegarde
+
+if $Json; then
+    cat <<EOF > "$FichierJson"
 {
   "date": "$Date",
   "heure": "$Heure",
@@ -57,12 +77,14 @@ then
   "visibilite": "${Visibilite} km"
 }
 EOF
-
-    echo "Meteo enregistree dans meteo.json"
+    echo "Météo enregistrée dans $FichierJson"
 else
-    echo "$Date - $Heure - $Ville : $Temperature°C, $Prevision, Vent: ${Vent} km/h, Humidité: ${Humidite}%, Visibilité: ${Visibilite} km" >> meteo.txt
-    echo "Météo enregistrée dans meteo.txt"
+    echo "$Date - $Heure - $Ville : $Temperature°C, $Prevision, Vent: ${Vent} km/h, Humidité: ${Humidite}%, Visibilité: ${Visibilite} km" >> "$FichierHistorique"
+    echo "Météo enregistrée dans $FichierHistorique"
 fi
 
-#nettoyage fichier temporaire
-rm meteo_temp.txt
+
+# Nettoyage fichier temporaire
+
+
+rm -f "$FichierTemp"
