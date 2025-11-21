@@ -1,7 +1,10 @@
 {
-  "date": "",
-  "heure": "",
-  "ville": "",
-  "temperature": "°C",
-  "prevision": "°C"
+  "date": "2025-11-21",
+  "heure": "13:05",
+  "ville": "Lomé",
+  "temperature": "2°C",
+  "prevision": "ND",
+  "vent": "4 km/h",
+  "humidite": "100%",
+  "visibilite": "10 km"
 }
