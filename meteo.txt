@@ -13,3 +13,4 @@
 2025-11-20 - 09:43 - Toulouse : 3°C - 5°C ; Vitesse du vent : 10 ; Taux d'humidité : 87 ; Visibilité : 10
 2025-11-20 - 09:44 - Paris : 2°C - 4°C - Vitesse du vent : 10 - Taux d'humidité : 93 - Visibilité : 10
 2025-11-20 - 09:45 - Paris : 2°C - 4°C - Vitesse du vent : 10 - Taux d'humidité : 93 - Visibilité : 10
+2025-11-21 - 10:35 - Toulouse : 3°C - 3°C - Vitesse du vent : 23 - Taux d'humidité : 81 - Visibilité : 10
