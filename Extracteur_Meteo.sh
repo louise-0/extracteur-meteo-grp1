@@ -34,6 +34,14 @@ curl -s "https://wttr.invalid/${Ville}?format=j1" > "$FichierTemp"
 
 curl -s "https://wttr.in/${Ville}?format=j1" > "$FichierTemp"
 
+# Vérifier si le JSON contient des données météo valides
+if ! grep -q '"temp_C"[[:space:]]*:[[:space:]]*"[0-9\+\-]"' "$FichierTemp"; then
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - ERREUR : Données météo non valides pour $Ville" >> "$FichierLog"
+    echo "Erreur détectée ! Voir $FichierLog"
+    rm -f "$FichierTemp"
+    exit 1
+fi
+
 
 # Gestion d'erreur si curl échoue ou fichier vide
 if [ $? -ne 0 ] || [ ! -s "$FichierTemp" ]; then
@@ -42,10 +50,11 @@ if [ $? -ne 0 ] || [ ! -s "$FichierTemp" ]; then
     exit 1
 fi
 
-# Vérifier si le JSON contient "temp_C" (ville valide)
+# Vérifier si le JSON contient "temp_C" et "weatherDesc" (ville valide)
 if ! grep -q '"temp_C"' "$FichierTemp"; then
     echo "$(date '+%Y-%m-%d %H:%M:%S') - ERREUR : Données météo non valides pour $Ville" >> "$FichierLog"
     echo "Erreur détectée ! Voir $FichierLog"
+    rm -f "$FichierTemp"
     exit 1
 fi
 
@@ -72,7 +81,7 @@ echo "$Date - $Heure - $Ville : $Temperature°C, $Prevision, Vent: ${Vent} km/h,
 
 
 # Sauvegarde
-=
+
 if $Json; then
     cat <<EOF > "$FichierJson"
 {

@@ -78,3 +78,9 @@
 2025-11-20 - 12:59 - Paris: 6°C - 5°C
 2025-11-20 - 13:05 - Toulouse: 7°C - 5°C
 2025-11-20 - 13:06 - paris: 7°C - 5°C
+2025-11-21 - 14:38 - Toulouse : 5°C, ND, Vent: 26 km/h, Humidité: 61%, Visibilité: 10 km
+2025-11-21 - 14:40 - Toulouse : 5°C, ND, Vent: 26 km/h, Humidité: 61%, Visibilité: 10 km
+2025-11-21 - 14:42 - Alger : 14°C, ND, Vent: 41 km/h, Humidité: 59%, Visibilité: 10 km
+2025-11-21 - 14:44 - VilleInexistante : 27°C, ND, Vent: 6 km/h, Humidité: 89%, Visibilité: 10 km
+2025-11-21 - 14:51 - Alger : 14°C, ND, Vent: 41 km/h, Humidité: 59%, Visibilité: 10 km
+2025-11-21 - 14:51 - VilleInexistante : 27°C, ND, Vent: 6 km/h, Humidité: 89%, Visibilité: 10 km
