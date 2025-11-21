@@ -103,3 +103,4 @@
 2025-11-21 - 11:01 - Toulouse : 3°C, ND, Vent: 23 km/h, Humidité: 81%, Visibilité: 10 km
 2025-11-21 - 11:22 - Toulouse : 3°C, ND, Vent: 24 km/h, Humidité: 81%, Visibilité: 10 km
 2025-11-21 - 11:23 - lille : 1°C, ND, Vent: 13 km/h, Humidité: 100%, Visibilité: 7 km
+2025-11-21 - 11:55 - Paris : 2°C, ND, Vent: 14 km/h, Humidité: 100%, Visibilité: 9 km

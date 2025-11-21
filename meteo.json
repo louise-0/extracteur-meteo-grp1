@@ -1,10 +1,10 @@
 {
   "date": "2025-11-21",
-  "heure": "11:24",
-  "ville": "Toulouse",
-  "temperature": "3°C",
+  "heure": "11:56",
+  "ville": "Paris",
+  "temperature": "2°C",
   "prevision": "ND",
-  "vent": "24 km/h",
-  "humidite": "81%",
-  "visibilite": "10 km"
+  "vent": "14 km/h",
+  "humidite": "100%",
+  "visibilite": "9 km"
 }
