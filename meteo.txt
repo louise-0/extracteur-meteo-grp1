@@ -96,3 +96,4 @@
 2025-11-20 - 21:49 - lyon : 1°C, ND, Vent: 8 km/h, Humidité: 86%, Visibilité: 10 km
 2025-11-20 - 21:59 - Toulouse : 5°C, ND, Vent: 10 km/h, Humidité: 81%, Visibilité: 10 km
 2025-11-20 - 22:01 - marseille : 6°C, ND, Vent: 40 km/h, Humidité: 52%, Visibilité: 10 km
+2025-11-21 - 10:15 - marseille : 4°C, ND, Vent: 48 km/h, Humidité: 60%, Visibilité: 10 km

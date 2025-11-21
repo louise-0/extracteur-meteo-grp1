@@ -1,10 +1,10 @@
 {
-  "date": "2025-11-20",
-  "heure": "22:00",
-  "ville": "paris",
-  "temperature": "ND°C",
+  "date": "2025-11-21",
+  "heure": "10:15",
+  "ville": "marseille",
+  "temperature": "4°C",
   "prevision": "ND",
-  "vent": "ND km/h",
-  "humidite": "ND%",
-  "visibilite": "ND km"
+  "vent": "48 km/h",
+  "humidite": "60%",
+  "visibilite": "10 km"
 }
