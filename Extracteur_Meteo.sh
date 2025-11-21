@@ -22,7 +22,7 @@ FichierTemp="meteo_temp.txt"
 FichierLog="meteo_error.log"
 
 # Récupération des données
-curl -s "https://wttr.in/${Ville}?format=j1" > "$FichierTemp"
+curl -s "https://wttr.invalid/${Ville}?format=j1" > "$FichierTemp"
 
 # Gestion d'erreur si curl échoue ou fichier vide
 if [ $? -ne 0 ] || [ ! -s "$FichierTemp" ]; then
