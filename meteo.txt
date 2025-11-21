@@ -1,5 +1,80 @@
-<<<<<<< HEAD
-2025-11-18 - 03:35 - Toulouse : 4°C - 6°C
-2025-11-19 - 03:34 - Toulouse : 0°C - 5°C
-2025-11-20 - 03:35 - Toulouse : 4°C - 5°C
-2025-11-21 - 03:35 - Toulouse : 3°C - 3°C
+2025-11-18 - 03:35 - Toulouse : 4°C - 6°C 
+2025-11-19 - 03:34 - Toulouse : 0°C - 5°C 2025-11-20 - 03:35 - Toulouse 
+: 4°C - 5°C 2025-11-21 - 03:35 - Toulouse : 3°C - 3°C ======= 2025-11-11 
+- 19:16 - Toulouse : +14°C - N/A 2025-11-11 - 19:25 - Toulouse : +14°C°C 
+- °C 2025-11-11 - 19:33 - Toulouse : °C - N/A°C 2025-11-11 - 19:34 - 
+Toulouse : °C - N/A°C 2025-11-11 - 19:38 - Toulouse : 14°C - 13°C 
+2025-11-11 - 19:52 - Paris : 12°C - 11°C 2025-11-14 - 08:51 - Toulouse : 
+18°C - 18°C 2025-11-14 - 08:51 - Toulouse : 18°C - 18°C 2025-11-15 - 
+03:29 - Toulouse : 13°C - 15°C 2025-11-16 - 03:40 - Toulouse : 13°C - 
+14°C 2025-11-16 - 18:08 - Toulouse : 15°C - 14°C 2025-11-17 - 15:23 - 
+Toulouse : ⛅️ +14°C - 2025-11-17 - 15:23 - Mulhouse : 🌧 +7°C - 
+2025-11-17 - 15:24 - Nice : ☀️ +20°C - 2025-11-17 - 15:24 - Monpeellier : 
+⛅️ +30°C - 2025-11-17 - 15:25 - Rennes : ⛅️ +10°C - 2025-11-17 - 15:44 - 
+Azazga : ⛅️ +20°C - 2025-11-17 - 17:31 - Azazga : - N/A 2025-11-17 - 
+17:32 - New York : - N/A 2025-11-17 - 17:38 - Nice : ☀️ +18°C - 🌘 
+2025-11-17 - 17:38 - Nice : ☀️ +18°C - 🌘 2025-11-17 - 17:38 - Paris : ☀️ 
++7°C - 🌘 2025-11-17 - 17:39 - Rennes : ☀️ +10°C - 🌘 2025-11-17 - 17:39 - 
+New York : - N/A 2025-11-17 - 17:42 - New York : - N/A 2025-11-17 - 
+17:43 - New York : - N/A 2025-11-17 - 17:43 - New York : - N/A 
+2025-11-17 - 17:44 - Rennes : ☀️ +10°C - 🌘 2025-11-17 - 17:44 - Paris : ☀️ 
++7°C - 🌘 2025-11-17 - 17:44 - Mulhouse : 🌦 +6°C - 🌘 2025-11-17 - 17:48 - 
+Mulhouse : 🌦 +6°C - N/A 2025-11-17 - 21:09 - Toulouse : ⛅️ +11°C - N/A 
+2025-11-17 - 21:16 - Toulouse : - N/A 2025-11-17 - 21:17 - Toulouse : ⛅️ 
++11°C - 2025-11-17 - 21:17 - Paris : ☀️ +4°C - 2025-11-17 - 21:18 - 
+Azazga : ⛅️ +15°C - 2025-11-17 - 21:29 - Azazga : ⛅️ +15°C - 2025-11-17 
+- 21:34 - Azazga : ⛅️ +15°C - 2025-11-17 - 21:36 - Azazga : ⛅️ +15°C - 
++15°C 2025-11-17 - 21:37 - Azazga : ⛅️ +15°C - +15°C 2025-11-17 - 21:38 
+- Lile : ☀️ +8°C - +8°C 2025-11-17 - 21:38 - Paris : ☀️ +4°C - +4°C 
+2025-11-17 - 21:38 - Rennes : ☀️ +6°C - +6°C 2025-11-17 - 21:39 - Nice : 
+☀️ +14°C - +14°C 2025-11-17 - 22:21 - Nice : ☀️ +14°C 2025-11-17 - 22:21 - 
+lille : 🌦 +3°C 2025-11-17 - 22:22 - Azazga : ⛅️ +15°C 2025-11-18 - 10:36 
+- Azazga : ⛅️ +16°C 2025-11-18 - 10:36 - Lile : ☀️ -1°C 2025-11-18 - 
+10:36 - lile : ☀️ -1°C 2025-11-18 - 10:36 - nice : ☀️ +12°C 2025-11-18 - 
+10:39 - Lyon : ☁️ +2°C 2025-11-18 - 10:39 - Tinkicht : ⛅️ +24°C 
+2025-11-18 - 10:39 - Fliki : ⛅️ +16°C 2025-11-18 - 10:39 - Azazga : ⛅️ 
++16°C 2025-11-18 - 10:40 - --archive : ⛅️ +9°C 2025-11-18 - 10:42 - 
+--archive : ⛅️ +9°C 2025-11-18 - 10:50 - lyon : ☁️ +2°C 2025-11-18 - 
+10:51 - --archive : ⛅️ +9°C 2025-11-18 - 10:51 - Toulouse : 🌫 +5°C 
+2025-11-18 - 10:52 - --archive : ⛅️ +9°C 2025-11-18 - 10:53 - --archive 
+: ⛅️ +9°C 2025-11-18 - 11:00 - paris : ☀️ +3°C 2025-11-18 - 11:04 - new : 
+🌦 +3°C 2025-11-20 - 12:35 - Toulouse: 6°C - 5°C 2025-11-20 - 12:36 - 
+paris: 6°C - 5°C 2025-11-20 - 12:44 - paris: 6°C - 5°C 2025-11-20 - 
+12:44 - Toulouse: 6°C - 5°C 2025-11-20 - 12:44 - --json: 6°C - 5°C 
+2025-11-20 - 12:45 - Toulouse: 6°C - 5°C 2025-11-20 - 12:45 - --json: 
+6°C - 5°C 2025-11-20 - 12:52 - Toulouse: 6°C - 5°C 2025-11-20 - 12:52 - 
+--json: 6°C - 5°C 2025-11-20 - 12:52 - --json: Meteo actuelle non 
+disponible°C - Meteo de lendemain non disponible°C 2025-11-20 - 12:53 - 
+lyon: 6°C - 3°C 2025-11-20 - 12:53 - lyon: 6°C - 3°C 2025-11-20 - 12:58 
+- Toulouse: 6°C - 5°C 2025-11-20 - 12:59 - Paris: 6°C - 5°C 2025-11-20 - 
+13:05 - Toulouse: 7°C - 5°C 2025-11-20 - 13:06 - paris: 7°C - 5°C 
+2025-11-20 - 19:45 - Rennes: 5°C - 5°C 2025-11-20 - 19:45 - Rennes: 5°C 
+- 5°C 2025-11-20 - 21:03 - Toulouse: 5°C - 4°C 2025-11-20 - 21:03 - 
+paris: 5°C - 4°C 2025-11-20 - 21:08 - paris: 5°C - 4°C 2025-11-20 - 
+21:10 - paris: 5°C - 3°C 2025-11-20 - 21:10 - Toulouse: 5°C - 3°C 
+2025-11-20 - 21:19 - lyon : 5°C, weatherDesc, Vent: 10 km/h, Humidité: 
+81%, Visibilité: 10 km 2025-11-20 - 21:22 - Toulouse : 5°C, weatherDesc, 
+Vent: 10 km/h, Humidité: 81%, Visibilité: 10 km 2025-11-20 - 21:23 - 
+Toulouse : 5°C, weatherDesc, Vent: 10 km/h, Humidité: 81%, Visibilité: 
+10 km 2025-11-20 - 21:23 - paris : 5°C, weatherDesc, Vent: 10 km/h, 
+Humidité: 81%, Visibilité: 10 km 2025-11-20 - 21:28 - lyon : 1°C, 
+weatherDesc, Vent: 8 km/h, Humidité: 86%, Visibilité: 10 km 2025-11-20 - 
+21:28 - Toulouse : 5°C, weatherDesc, Vent: 13 km/h, Humidité: 75%, 
+Visibilité: 10 km 2025-11-20 - 21:44 - Toulouse : 5°C, ND, Vent: 10 
+km/h, Humidité: 81%, Visibilité: 10 km 2025-11-20 - 21:48 - lyon : 1°C, 
+ND, Vent: 8 km/h, Humidité: 86%, Visibilité: 10 km 2025-11-20 - 21:49 - 
+lyon : 1°C, ND, Vent: 8 km/h, Humidité: 86%, Visibilité: 10 km 
+2025-11-20 - 21:59 - Toulouse : 5°C, ND, Vent: 10 km/h, Humidité: 81%, 
+Visibilité: 10 km 2025-11-20 - 22:01 - marseille : 6°C, ND, Vent: 40 
+km/h, Humidité: 52%, Visibilité: 10 km 2025-11-21 - 10:15 - marseille : 
+4°C, ND, Vent: 48 km/h, Humidité: 60%, Visibilité: 10 km 2025-11-21 - 
+10:27 - marseille : 4°C, ND, Vent: 48 km/h, Humidité: 60%, Visibilité: 
+10 km 2025-11-21 - 10:28 - marseille : 4°C, ND, Vent: 48 km/h, Humidité: 
+60%, Visibilité: 10 km 2025-11-21 - 10:29 - marseille : 4°C, ND, Vent: 
+48 km/h, Humidité: 60%, Visibilité: 10 km 2025-11-21 - 11:01 - Toulouse 
+: 3°C, ND, Vent: 23 km/h, Humidité: 81%, Visibilité: 10 km 2025-11-21 - 
+11:22 - Toulouse : 3°C, ND, Vent: 24 km/h, Humidité: 81%, Visibilité: 10 
+km 2025-11-21 - 11:23 - lille : 1°C, ND, Vent: 13 km/h, Humidité: 100%, 
+Visibilité: 7 km 2025-11-21 - 11:55 - Paris : 2°C, ND, Vent: 14 km/h, 
+Humidité: 100%, Visibilité: 9 km 2025-11-21 - 14:11 - Toulouse : 4°C, 
+ND, Vent: 26 km/h, Humidité: 70%, Visibilité: 10 km
