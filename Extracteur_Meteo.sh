@@ -23,6 +23,11 @@ Heure=$(date +"%H:%M")
 #recuperation des donnes meterologique
 curl -s "https://wttr.in/${VILLE}?format=j1" > meteo_temp.txt
 
+if [ $? -ne 0 ] || [ ! -s meteo_temp.txt ]; then
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - ERREUR : Impossible de récupérer les données pour $Ville" >> meteo_error.log
+    exit 1
+fi
+
 Temperature_actuelle=$(grep -m1 '"temp_C"' meteo_temp.txt | sed 's/[^0-9\-]//g')
 Temperature_lendemain=$(grep -m1 '"avgtempC"' meteo_temp.txt | sed 's/[^0-9\-]//g')
 
