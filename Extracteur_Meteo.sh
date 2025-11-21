@@ -38,7 +38,7 @@ if $TestError; then
     # Crée un fichier vide pour simuler une erreur
     > "$FichierTemp"
 else
-    curl -s "https://wttr.in/${Ville}?format=j1" > "$FichierTemp"
+    curl -s "https://wttr.in.invalid/${Ville}?format=j1" > "$FichierTemp"
 fi
 
 # Gestion d'erreur si curl échoue ou fichier vide
